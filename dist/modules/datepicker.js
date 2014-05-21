@@ -1,6 +1,6 @@
 /**
- * angular-strap
- * @version v2.0.2 - 2014-04-27
+ * angular-strap-sass
+ * @version v2.0.2 - 2014-05-21
  * @link http://mgcrea.github.io/angular-strap
  * @author Olivier Louvignes (olivier@mg-crea.com)
  * @license MIT License, http://www.opensource.org/licenses/MIT
@@ -30,7 +30,9 @@ angular.module('mgcrea.ngStrap.datepicker', [
       maxDate: +Infinity,
       startView: 0,
       minView: 0,
-      startWeek: 0
+      startWeek: 0,
+      iconLeft: 'glyphicon glyphicon-chevron-left',
+      iconRight: 'glyphicon glyphicon-chevron-right'
     };
   this.$get = [
     '$window',
@@ -59,6 +61,8 @@ angular.module('mgcrea.ngStrap.datepicker', [
         $datepicker.$views = pickerViews.views;
         var viewDate = pickerViews.viewDate;
         scope.$mode = options.startView;
+        scope.$iconLeft = options.iconLeft;
+        scope.$iconRight = options.iconRight;
         var $picker = $datepicker.$views[scope.$mode];
         // Scope methods
         scope.$select = function (date) {
